@@ -1,0 +1,987 @@
+{
+  "services": [
+    {
+      "title": "Gestão de Usuários e Acessos",
+      "description": "Centraliza solicitações relacionadas a login, senha, MFA, criação, alteração, bloqueio, desativação e auditoria de acessos de usuários, incluindo papéis, perfis e conjuntos de permissões.",
+      "subtitle": "9 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "shield-check",
+      "category": "Segurança",
+      "sortOrder": 1
+    },
+    {
+      "title": "Configurações de Objetos e Metadados",
+      "description": "Agrupa solicitações de criação e ajuste de campos, picklists, layouts, tipos de registro, regras de validação, nomes de objetos e componentes de configuração da plataforma.",
+      "subtitle": "14 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "settings-2",
+      "category": "Configuração",
+      "sortOrder": 2
+    },
+    {
+      "title": "Gestão de Dados",
+      "description": "Reúne solicitações de importação, atualização, limpeza, deduplicação, restauração, transferência, exportação e controle de armazenamento de dados.",
+      "subtitle": "12 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "database",
+      "category": "Dados",
+      "sortOrder": 3
+    },
+    {
+      "title": "Sales Cloud",
+      "description": "Atende solicitações relacionadas ao processo comercial, produtos, listas de preço, oportunidades, leads, caminho de vendas, validações e previsões comerciais.",
+      "subtitle": "8 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "chart-no-axes-combined",
+      "category": "Vendas",
+      "sortOrder": 4
+    },
+    {
+      "title": "Service Cloud e Atendimento",
+      "description": "Centraliza ajustes de atendimento, filas, templates de e-mail, horário comercial, Omni-Channel, Email-to-Case, regras de atribuição, SLA e base de conhecimento.",
+      "subtitle": "11 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "headphones",
+      "category": "Atendimento",
+      "sortOrder": 5
+    },
+    {
+      "title": "Portais e Experience Cloud",
+      "description": "Agrupa solicitações relacionadas a comunidades e portais, incluindo acesso de usuários externos, menus, públicos-alvo, branding, permissões de compartilhamento e moderação.",
+      "subtitle": "9 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "panel-top",
+      "category": "Portais",
+      "sortOrder": 6
+    },
+    {
+      "title": "Revenue Cloud, CPQ e Billing",
+      "description": "Reúne solicitações relacionadas a cotações, regras de preço, bundles, templates, renovações, guided selling e sincronização de informações entre produtos e linhas de cotação.",
+      "subtitle": "7 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "receipt",
+      "category": "Receita",
+      "sortOrder": 7
+    },
+    {
+      "title": "Field Service",
+      "description": "Atende solicitações relacionadas à operação de campo, aplicativo mobile, agendamento, territórios, console de despacho, planos de manutenção e geolocalização.",
+      "subtitle": "6 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "wrench",
+      "category": "Operação de Campo",
+      "sortOrder": 8
+    },
+    {
+      "title": "Automação e Integrações",
+      "description": "Agrupa solicitações técnicas avançadas envolvendo Flow, Apex, componentes, APIs, autenticação, certificados, deploys, sandbox e integrações entre sistemas.",
+      "subtitle": "13 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "workflow",
+      "category": "Integrações",
+      "sortOrder": 9
+    },
+    {
+      "title": "Relatórios e Analytics",
+      "description": "Reúne solicitações de criação, ajuste, organização, agendamento e análise de relatórios, dashboards, tipos de relatório e pastas públicas.",
+      "subtitle": "8 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "bar-chart-3",
+      "category": "Analytics",
+      "sortOrder": 10
+    },
+    {
+      "title": "Ecossistema e Pacotes Instalados",
+      "description": "Atende problemas ou ajustes relacionados a soluções instaladas no ambiente, como aplicativos do AppExchange e integrações de terceiros.",
+      "subtitle": "1 opções de solicitação",
+      "sla": "Atendimento sob demanda",
+      "icon": "package-check",
+      "category": "Administração",
+      "sortOrder": 11
+    }
+  ],
+  "requestTypes": [
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Reset de Senha",
+      "title": "Redefinição de Senha",
+      "description": "Solicitação para redefinir a senha de acesso de um usuário quando houver esquecimento, bloqueio por senha expirada ou necessidade de envio de novo link de redefinição.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Reset de Senha Redefinição de Senha Solicitação para redefinir a senha de acesso de um usuário quando houver esquecimento, bloqueio por senha expirada ou necessidade de envio de novo link de redefinição.",
+      "sortOrder": 1
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Desbloqueio de Conta",
+      "title": "Desbloqueio de Conta de Usuário",
+      "description": "Solicitação para desbloquear uma conta bloqueada por tentativas incorretas de login, política de segurança ou impedimento temporário de acesso.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Desbloqueio de Conta Desbloqueio de Conta de Usuário Solicitação para desbloquear uma conta bloqueada por tentativas incorretas de login, política de segurança ou impedimento temporário de acesso.",
+      "sortOrder": 2
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Reset de MFA",
+      "title": "Redefinição de MFA / Autenticador",
+      "description": "Solicitação para remover ou reiniciar a configuração de autenticação multifator de um usuário, permitindo o cadastro de um novo aplicativo autenticador ou dispositivo.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Reset de MFA Redefinição de MFA / Autenticador Solicitação para remover ou reiniciar a configuração de autenticação multifator de um usuário, permitindo o cadastro de um novo aplicativo autenticador ou dispositivo.",
+      "sortOrder": 3
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Erro de Login (SSO)",
+      "title": "Erro de Login via SSO",
+      "description": "Solicitação para analisar falhas de autenticação por Single Sign-On, como erro SAML, Federation ID incorreto, usuário não localizado ou falha de comunicação com o provedor de identidade.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Erro de Login (SSO) Erro de Login via SSO Solicitação para analisar falhas de autenticação por Single Sign-On, como erro SAML, Federation ID incorreto, usuário não localizado ou falha de comunicação com o provedor de identidade.",
+      "sortOrder": 4
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Criação de Novo Usuário",
+      "title": "Criação de Usuário",
+      "description": "Solicitação para cadastrar um novo usuário no ambiente, informando nome, e-mail, perfil, papel, permissões e demais dados necessários para concessão de acesso.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Criação de Novo Usuário Criação de Usuário Solicitação para cadastrar um novo usuário no ambiente, informando nome, e-mail, perfil, papel, permissões e demais dados necessários para concessão de acesso.",
+      "sortOrder": 5
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Desativação de Usuário",
+      "title": "Desativação ou Congelamento de Usuário",
+      "description": "Solicitação para bloquear, congelar ou desativar o acesso de um usuário desligado, transferido ou sem necessidade de acesso ao sistema.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Desativação de Usuário Desativação ou Congelamento de Usuário Solicitação para bloquear, congelar ou desativar o acesso de um usuário desligado, transferido ou sem necessidade de acesso ao sistema.",
+      "sortOrder": 6
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Atribuição de Permission Set",
+      "title": "Atribuição de Conjunto de Permissões",
+      "description": "Solicitação para adicionar ou remover conjuntos de permissões de um usuário, liberando acessos específicos sem alteração direta do perfil principal.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Atribuição de Permission Set Atribuição de Conjunto de Permissões Solicitação para adicionar ou remover conjuntos de permissões de um usuário, liberando acessos específicos sem alteração direta do perfil principal.",
+      "sortOrder": 7
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Ajuste de Papel (Role)",
+      "title": "Alteração de Papel / Hierarquia",
+      "description": "Solicitação para alterar o papel de um usuário na hierarquia, ajustando visibilidade de registros, carteira, equipe ou estrutura comercial.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Ajuste de Papel (Role) Alteração de Papel / Hierarquia Solicitação para alterar o papel de um usuário na hierarquia, ajustando visibilidade de registros, carteira, equipe ou estrutura comercial.",
+      "sortOrder": 8
+    },
+    {
+      "serviceTitle": "Gestão de Usuários e Acessos",
+      "originalName": "Auditoria de Acessos",
+      "title": "Auditoria de Acessos e Atividades",
+      "description": "Solicitação para consultar ou extrair informações sobre acessos, usuários ativos, permissões, exportações, logins ou atividades relevantes para controle e auditoria.",
+      "category": "Segurança",
+      "keywords": "Gestão de Usuários e Acessos Auditoria de Acessos Auditoria de Acessos e Atividades Solicitação para consultar ou extrair informações sobre acessos, usuários ativos, permissões, exportações, logins ou atividades relevantes para controle e auditoria.",
+      "sortOrder": 9
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Criação de Campo Simples",
+      "title": "Criação de Campo Simples",
+      "description": "Solicitação para criar campo padrão de baixa complexidade, como texto, número, data, moeda, checkbox ou e-mail, em objeto já existente.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Criação de Campo Simples Criação de Campo Simples Solicitação para criar campo padrão de baixa complexidade, como texto, número, data, moeda, checkbox ou e-mail, em objeto já existente.",
+      "sortOrder": 10
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Criação de Campo Fórmula",
+      "title": "Criação de Campo de Fórmula",
+      "description": "Solicitação para criar campo calculado com regra de fórmula, utilizando informações de outros campos para exibir valores derivados, indicadores ou cálculos automáticos.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Criação de Campo Fórmula Criação de Campo de Fórmula Solicitação para criar campo calculado com regra de fórmula, utilizando informações de outros campos para exibir valores derivados, indicadores ou cálculos automáticos.",
+      "sortOrder": 11
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Atualizar Picklist",
+      "title": "Atualização de Lista de Valores",
+      "description": "Solicitação para adicionar, remover, reorganizar, renomear ou inativar valores de uma lista de seleção utilizada em telas e processos.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Atualizar Picklist Atualização de Lista de Valores Solicitação para adicionar, remover, reorganizar, renomear ou inativar valores de uma lista de seleção utilizada em telas e processos.",
+      "sortOrder": 12
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Global Picklist Set",
+      "title": "Conjunto Global de Valores",
+      "description": "Solicitação para criar ou ajustar um conjunto global de valores utilizado por múltiplos campos, mantendo padronização entre objetos e processos.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Global Picklist Set Conjunto Global de Valores Solicitação para criar ou ajustar um conjunto global de valores utilizado por múltiplos campos, mantendo padronização entre objetos e processos.",
+      "sortOrder": 13
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Dependência de Campo",
+      "title": "Dependência entre Campos",
+      "description": "Solicitação para configurar relação entre campo controlador e campo dependente, exibindo valores de acordo com a opção selecionada pelo usuário.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Dependência de Campo Dependência entre Campos Solicitação para configurar relação entre campo controlador e campo dependente, exibindo valores de acordo com a opção selecionada pelo usuário.",
+      "sortOrder": 14
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Ajuste de Page Layout",
+      "title": "Ajuste de Layout de Página",
+      "description": "Solicitação para reorganizar campos, seções, botões, listas relacionadas ou componentes exibidos no layout de registro.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Ajuste de Page Layout Ajuste de Layout de Página Solicitação para reorganizar campos, seções, botões, listas relacionadas ou componentes exibidos no layout de registro.",
+      "sortOrder": 15
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Criar/Renomear campo e adicionar ao Layout",
+      "title": "Criar ou Renomear Campo e Adicionar ao Layout",
+      "description": "Solicitação para criar ou renomear um campo e disponibilizá-lo no layout de página correspondente, respeitando visibilidade, obrigatoriedade e organização da tela.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Criar/Renomear campo e adicionar ao Layout Criar ou Renomear Campo e Adicionar ao Layout Solicitação para criar ou renomear um campo e disponibilizá-lo no layout de página correspondente, respeitando visibilidade, obrigatoriedade e organização da tela.",
+      "sortOrder": 16
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Criar/Editar Regra de Validação",
+      "title": "Criar ou Alterar Regra de Validação",
+      "description": "Solicitação para criar ou ajustar uma regra que impeça o salvamento de registros quando as condições de negócio não forem atendidas.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Criar/Editar Regra de Validação Criar ou Alterar Regra de Validação Solicitação para criar ou ajustar uma regra que impeça o salvamento de registros quando as condições de negócio não forem atendidas.",
+      "sortOrder": 17
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Criar novo Tipo de Registro e Layout",
+      "title": "Criar Tipo de Registro e Layout",
+      "description": "Solicitação para criar um novo tipo de registro e associar layout específico, valores de picklist, processo e regras de exibição conforme o cenário de negócio.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Criar novo Tipo de Registro e Layout Criar Tipo de Registro e Layout Solicitação para criar um novo tipo de registro e associar layout específico, valores de picklist, processo e regras de exibição conforme o cenário de negócio.",
+      "sortOrder": 18
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Configurar visibilidade dinâmica de campos",
+      "title": "Configurar Visibilidade Dinâmica de Campos",
+      "description": "Solicitação para definir regras de exibição condicional de campos ou componentes na Lightning Page de acordo com perfil, valor de campo ou contexto do registro.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Configurar visibilidade dinâmica de campos Configurar Visibilidade Dinâmica de Campos Solicitação para definir regras de exibição condicional de campos ou componentes na Lightning Page de acordo com perfil, valor de campo ou contexto do registro.",
+      "sortOrder": 19
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Dynamic Forms",
+      "title": "Configuração de Dynamic Forms",
+      "description": "Solicitação para organizar campos e seções usando Dynamic Forms, incluindo regras de visibilidade e apresentação dinâmica na Lightning Page.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Dynamic Forms Configuração de Dynamic Forms Solicitação para organizar campos e seções usando Dynamic Forms, incluindo regras de visibilidade e apresentação dinâmica na Lightning Page.",
+      "sortOrder": 20
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Record Type (Novo)",
+      "title": "Novo Tipo de Registro",
+      "description": "Solicitação para criar tipo de registro destinado a separar processos, layouts, valores e comportamentos diferentes dentro do mesmo objeto.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Record Type (Novo) Novo Tipo de Registro Solicitação para criar tipo de registro destinado a separar processos, layouts, valores e comportamentos diferentes dentro do mesmo objeto.",
+      "sortOrder": 21
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Falha de sincronização Outlook/Gmail Integration",
+      "title": "Falha de Sincronização com Outlook ou Gmail",
+      "description": "Solicitação para analisar problemas de sincronização entre e-mail/calendário e Salesforce, incluindo falhas de conexão, permissões ou registros não sincronizados.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Falha de sincronização Outlook/Gmail Integration Falha de Sincronização com Outlook ou Gmail Solicitação para analisar problemas de sincronização entre e-mail/calendário e Salesforce, incluindo falhas de conexão, permissões ou registros não sincronizados.",
+      "sortOrder": 22
+    },
+    {
+      "serviceTitle": "Configurações de Objetos e Metadados",
+      "originalName": "Renomear Tab/Objeto",
+      "title": "Renomear Aba ou Objeto",
+      "description": "Solicitação para alterar o nome de exibição de uma aba ou objeto, adequando a nomenclatura apresentada aos usuários.",
+      "category": "Configuração",
+      "keywords": "Configurações de Objetos e Metadados Renomear Tab/Objeto Renomear Aba ou Objeto Solicitação para alterar o nome de exibição de uma aba ou objeto, adequando a nomenclatura apresentada aos usuários.",
+      "sortOrder": 23
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Mesclagem de Contas",
+      "title": "Mesclagem de Registros Duplicados",
+      "description": "Solicitação para unificar registros duplicados, preservando histórico, relacionamentos e informações relevantes conforme validação prévia.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Mesclagem de Contas Mesclagem de Registros Duplicados Solicitação para unificar registros duplicados, preservando histórico, relacionamentos e informações relevantes conforme validação prévia.",
+      "sortOrder": 24
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Transferência de Propriedade",
+      "title": "Transferência de Propriedade de Registros",
+      "description": "Solicitação para alterar o proprietário de registros em massa ou individualmente, como em casos de troca de carteira, desligamento ou reorganização de equipe.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Transferência de Propriedade Transferência de Propriedade de Registros Solicitação para alterar o proprietário de registros em massa ou individualmente, como em casos de troca de carteira, desligamento ou reorganização de equipe.",
+      "sortOrder": 25
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Mover relatório para pasta acessível a todos.",
+      "title": "Mover Relatório para Pasta Compartilhada",
+      "description": "Solicitação para mover ou compartilhar relatório em pasta acessível aos usuários necessários, respeitando permissões de visualização.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Mover relatório para pasta acessível a todos. Mover Relatório para Pasta Compartilhada Solicitação para mover ou compartilhar relatório em pasta acessível aos usuários necessários, respeitando permissões de visualização.",
+      "sortOrder": 26
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Carga de dados simples até 50k",
+      "title": "Carga de Dados Simples até 50 mil Registros",
+      "description": "Solicitação para importar ou atualizar volume controlado de dados, com arquivo estruturado e regras de correspondência previamente definidas.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Carga de dados simples até 50k Carga de Dados Simples até 50 mil Registros Solicitação para importar ou atualizar volume controlado de dados, com arquivo estruturado e regras de correspondência previamente definidas.",
+      "sortOrder": 27
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Limpeza/Deduplicação de dados complexa",
+      "title": "Limpeza e Deduplicação de Dados Complexa",
+      "description": "Solicitação para identificar, tratar e corrigir dados duplicados, inconsistentes ou fora de padrão, envolvendo análise de regras e validação de impacto.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Limpeza/Deduplicação de dados complexa Limpeza e Deduplicação de Dados Complexa Solicitação para identificar, tratar e corrigir dados duplicados, inconsistentes ou fora de padrão, envolvendo análise de regras e validação de impacto.",
+      "sortOrder": 28
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Alteração de tipo de campo",
+      "title": "Alteração de Tipo de Campo",
+      "description": "Solicitação para alterar o tipo de um campo existente, avaliando impacto em dados, fórmulas, automações, relatórios, integrações e telas.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Alteração de tipo de campo Alteração de Tipo de Campo Solicitação para alterar o tipo de um campo existente, avaliando impacto em dados, fórmulas, automações, relatórios, integrações e telas.",
+      "sortOrder": 29
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Carga de Dados até 10k",
+      "title": "Carga ou Atualização de Dados até 10 mil Registros",
+      "description": "Solicitação para realizar importação ou atualização de dados em volume limitado, com arquivo validado e campos de correspondência definidos.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Carga de Dados até 10k Carga ou Atualização de Dados até 10 mil Registros Solicitação para realizar importação ou atualização de dados em volume limitado, com arquivo validado e campos de correspondência definidos.",
+      "sortOrder": 30
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Exclusão em Massa",
+      "title": "Exclusão de Registros em Massa",
+      "description": "Solicitação para apagar registros em lote, com validação prévia do escopo, impacto e possibilidade de recuperação.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Exclusão em Massa Exclusão de Registros em Massa Solicitação para apagar registros em lote, com validação prévia do escopo, impacto e possibilidade de recuperação.",
+      "sortOrder": 31
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Restaurar da Lixeira",
+      "title": "Restauração de Registro Excluído",
+      "description": "Solicitação para recuperar registro excluído acidentalmente, desde que ainda esteja disponível na lixeira ou em mecanismo de recuperação permitido.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Restaurar da Lixeira Restauração de Registro Excluído Solicitação para recuperar registro excluído acidentalmente, desde que ainda esteja disponível na lixeira ou em mecanismo de recuperação permitido.",
+      "sortOrder": 32
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Regra de Duplicidade",
+      "title": "Ajuste de Regra de Duplicidade",
+      "description": "Solicitação para revisar regras de identificação de duplicidade que estejam bloqueando criação, atualização ou integração de registros.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Regra de Duplicidade Ajuste de Regra de Duplicidade Solicitação para revisar regras de identificação de duplicidade que estejam bloqueando criação, atualização ou integração de registros.",
+      "sortOrder": 33
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Storage Limit Alert",
+      "title": "Análise de Limite de Armazenamento",
+      "description": "Solicitação para avaliar consumo de armazenamento, identificar objetos com maior volume e propor ações de limpeza ou arquivamento.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Storage Limit Alert Análise de Limite de Armazenamento Solicitação para avaliar consumo de armazenamento, identificar objetos com maior volume e propor ações de limpeza ou arquivamento.",
+      "sortOrder": 34
+    },
+    {
+      "serviceTitle": "Gestão de Dados",
+      "originalName": "Backup Manual",
+      "title": "Exportação Manual de Dados",
+      "description": "Solicitação para gerar exportação manual de dados do ambiente, respeitando permissões, escopo e política de segurança.",
+      "category": "Dados",
+      "keywords": "Gestão de Dados Backup Manual Exportação Manual de Dados Solicitação para gerar exportação manual de dados do ambiente, respeitando permissões, escopo e política de segurança.",
+      "sortOrder": 35
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Adicionar Produto",
+      "title": "Cadastro de Produto",
+      "description": "Solicitação para cadastrar novo produto ou SKU e ativá-lo na lista de preços adequada para uso no processo comercial.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Adicionar Produto Cadastro de Produto Solicitação para cadastrar novo produto ou SKU e ativá-lo na lista de preços adequada para uso no processo comercial.",
+      "sortOrder": 36
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Gestão de Pricebooks",
+      "title": "Gestão de Listas de Preço",
+      "description": "Solicitação para criar, alterar ou ativar listas de preço conforme região, campanha, cliente, período ou regra comercial.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Gestão de Pricebooks Gestão de Listas de Preço Solicitação para criar, alterar ou ativar listas de preço conforme região, campanha, cliente, período ou regra comercial.",
+      "sortOrder": 37
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Sales Path (Caminho)",
+      "title": "Ajuste do Caminho de Vendas",
+      "description": "Solicitação para alterar etapas, campos-chave, orientações ou textos exibidos no caminho do processo de vendas.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Sales Path (Caminho) Ajuste do Caminho de Vendas Solicitação para alterar etapas, campos-chave, orientações ou textos exibidos no caminho do processo de vendas.",
+      "sortOrder": 38
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Lead Assignment Rule",
+      "title": "Ajuste de Regra de Distribuição de Leads",
+      "description": "Solicitação para analisar ou alterar regras de distribuição automática de leads entre filas, usuários ou equipes.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Lead Assignment Rule Ajuste de Regra de Distribuição de Leads Solicitação para analisar ou alterar regras de distribuição automática de leads entre filas, usuários ou equipes.",
+      "sortOrder": 39
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Web-to-Lead",
+      "title": "Configuração de Web-to-Lead",
+      "description": "Solicitação para criar ou ajustar formulário de captura de leads no site, incluindo campos, origem, regras de encaminhamento e validações.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Web-to-Lead Configuração de Web-to-Lead Solicitação para criar ou ajustar formulário de captura de leads no site, incluindo campos, origem, regras de encaminhamento e validações.",
+      "sortOrder": 40
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Erro de Validação",
+      "title": "Erro ao Salvar Registro por Validação",
+      "description": "Solicitação para analisar mensagem de erro causada por regra de validação ao salvar oportunidade, conta, lead ou outro registro comercial.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Erro de Validação Erro ao Salvar Registro por Validação Solicitação para analisar mensagem de erro causada por regra de validação ao salvar oportunidade, conta, lead ou outro registro comercial.",
+      "sortOrder": 41
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Previsão Colaborativa",
+      "title": "Ajuste de Previsão Colaborativa",
+      "description": "Solicitação para revisar hierarquia, cotas ou configurações de forecast utilizadas no acompanhamento comercial.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Previsão Colaborativa Ajuste de Previsão Colaborativa Solicitação para revisar hierarquia, cotas ou configurações de forecast utilizadas no acompanhamento comercial.",
+      "sortOrder": 42
+    },
+    {
+      "serviceTitle": "Sales Cloud",
+      "originalName": "Moedas (Multi-Currency)",
+      "title": "Atualização de Moedas e Câmbio",
+      "description": "Solicitação para atualizar taxas de câmbio, moedas habilitadas ou configurações relacionadas a múltiplas moedas.",
+      "category": "Vendas",
+      "keywords": "Sales Cloud Moedas (Multi-Currency) Atualização de Moedas e Câmbio Solicitação para atualizar taxas de câmbio, moedas habilitadas ou configurações relacionadas a múltiplas moedas.",
+      "sortOrder": 43
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Adicionar Usuário em Fila",
+      "title": "Adicionar Usuário em Fila de Atendimento",
+      "description": "Solicitação para incluir ou remover agente em fila de atendimento, permitindo recebimento e tratamento de demandas específicas.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Adicionar Usuário em Fila Adicionar Usuário em Fila de Atendimento Solicitação para incluir ou remover agente em fila de atendimento, permitindo recebimento e tratamento de demandas específicas.",
+      "sortOrder": 44
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Template de Email",
+      "title": "Ajuste de Modelo de E-mail",
+      "description": "Solicitação para alterar texto, campos dinâmicos, assinatura, assunto ou estrutura de modelo de e-mail utilizado no atendimento.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Template de Email Ajuste de Modelo de E-mail Solicitação para alterar texto, campos dinâmicos, assinatura, assunto ou estrutura de modelo de e-mail utilizado no atendimento.",
+      "sortOrder": 45
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Business Hours",
+      "title": "Configuração de Horário Comercial",
+      "description": "Solicitação para ajustar horário de atendimento, feriados, turnos ou calendário utilizado em SLA e regras de atendimento.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Business Hours Configuração de Horário Comercial Solicitação para ajustar horário de atendimento, feriados, turnos ou calendário utilizado em SLA e regras de atendimento.",
+      "sortOrder": 46
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Omni-Channel Travado",
+      "title": "Correção de Status Travado no Omni-Channel",
+      "description": "Solicitação para analisar agente com status preso, indisponível ou sem recebimento de itens de trabalho no Omni-Channel.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Omni-Channel Travado Correção de Status Travado no Omni-Channel Solicitação para analisar agente com status preso, indisponível ou sem recebimento de itens de trabalho no Omni-Channel.",
+      "sortOrder": 47
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Email-to-Case Parado",
+      "title": "Falha no Email-to-Case",
+      "description": "Solicitação para investigar casos que não estão sendo criados a partir de e-mails, incluindo roteamento, encaminhamento, permissões ou servidor.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Email-to-Case Parado Falha no Email-to-Case Solicitação para investigar casos que não estão sendo criados a partir de e-mails, incluindo roteamento, encaminhamento, permissões ou servidor.",
+      "sortOrder": 48
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Assignment Rules (Casos)",
+      "title": "Ajuste de Regra de Atribuição de Casos",
+      "description": "Solicitação para alterar lógica de roteamento de casos por fila, prioridade, categoria, produto, tipo de solicitação ou outro critério de atendimento.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Assignment Rules (Casos) Ajuste de Regra de Atribuição de Casos Solicitação para alterar lógica de roteamento de casos por fila, prioridade, categoria, produto, tipo de solicitação ou outro critério de atendimento.",
+      "sortOrder": 49
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Milestone/SLA Falhando",
+      "title": "Falha em Marco ou SLA de Atendimento",
+      "description": "Solicitação para corrigir contagem, disparo ou aplicação incorreta de marco de atendimento e regra de SLA.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Milestone/SLA Falhando Falha em Marco ou SLA de Atendimento Solicitação para corrigir contagem, disparo ou aplicação incorreta de marco de atendimento e regra de SLA.",
+      "sortOrder": 50
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Configurar nova Fila e Regra de Atribuição",
+      "title": "Criar Fila e Regra de Atribuição",
+      "description": "Solicitação para criar uma nova fila de atendimento e configurar regra que direcione automaticamente os chamados para essa fila.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Configurar nova Fila e Regra de Atribuição Criar Fila e Regra de Atribuição Solicitação para criar uma nova fila de atendimento e configurar regra que direcione automaticamente os chamados para essa fila.",
+      "sortOrder": 51
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Ajustar canal Email-to-Case ou Web-to-Case",
+      "title": "Ajustar Canal Email-to-Case ou Web-to-Case",
+      "description": "Solicitação para revisar configuração de canal de entrada de casos por e-mail ou formulário web, incluindo campos, roteamento e regras de criação.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Ajustar canal Email-to-Case ou Web-to-Case Ajustar Canal Email-to-Case ou Web-to-Case Solicitação para revisar configuração de canal de entrada de casos por e-mail ou formulário web, incluindo campos, roteamento e regras de criação.",
+      "sortOrder": 52
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Knowledge Base",
+      "title": "Configuração da Base de Conhecimento",
+      "description": "Solicitação para criar, ajustar ou organizar tipos de artigo, categorias de dados e permissões relacionadas à base de conhecimento.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Knowledge Base Configuração da Base de Conhecimento Solicitação para criar, ajustar ou organizar tipos de artigo, categorias de dados e permissões relacionadas à base de conhecimento.",
+      "sortOrder": 53
+    },
+    {
+      "serviceTitle": "Service Cloud e Atendimento",
+      "originalName": "Web-to-Case",
+      "title": "Configuração de Web-to-Case",
+      "description": "Solicitação para criar ou ajustar formulário web de abertura de casos, incluindo campos, origem, filas e regras de atendimento.",
+      "category": "Atendimento",
+      "keywords": "Service Cloud e Atendimento Web-to-Case Configuração de Web-to-Case Solicitação para criar ou ajustar formulário web de abertura de casos, incluindo campos, origem, filas e regras de atendimento.",
+      "sortOrder": 54
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Usuário Externo não Loga",
+      "title": "Erro de Login de Usuário Externo",
+      "description": "Solicitação para analisar falha de acesso de cliente, parceiro ou usuário externo em comunidade ou portal.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Usuário Externo não Loga Erro de Login de Usuário Externo Solicitação para analisar falha de acesso de cliente, parceiro ou usuário externo em comunidade ou portal.",
+      "sortOrder": 55
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Email de Boas-vindas",
+      "title": "Reenvio de E-mail de Boas-vindas",
+      "description": "Solicitação para reenviar ou corrigir o e-mail de ativação de usuário externo em comunidade ou portal.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Email de Boas-vindas Reenvio de E-mail de Boas-vindas Solicitação para reenviar ou corrigir o e-mail de ativação de usuário externo em comunidade ou portal.",
+      "sortOrder": 56
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Visibilidade de Menu",
+      "title": "Ajuste de Visibilidade de Menu",
+      "description": "Solicitação para corrigir item de menu que não aparece para determinado público, perfil ou permissão em portal ou comunidade.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Visibilidade de Menu Ajuste de Visibilidade de Menu Solicitação para corrigir item de menu que não aparece para determinado público, perfil ou permissão em portal ou comunidade.",
+      "sortOrder": 57
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Audience (Público-Alvo)",
+      "title": "Configuração de Público-Alvo",
+      "description": "Solicitação para ajustar regras de exibição de componentes e páginas por público, perfil, segmento ou condição de acesso.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Audience (Público-Alvo) Configuração de Público-Alvo Solicitação para ajustar regras de exibição de componentes e páginas por público, perfil, segmento ou condição de acesso.",
+      "sortOrder": 58
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Reset de senha/Acesso de usuário da Comunidade",
+      "title": "Redefinição de Senha ou Acesso de Usuário Externo",
+      "description": "Solicitação para recuperar acesso de usuário externo em portal ou comunidade, incluindo reset de senha e validação de permissões.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Reset de senha/Acesso de usuário da Comunidade Redefinição de Senha ou Acesso de Usuário Externo Solicitação para recuperar acesso de usuário externo em portal ou comunidade, incluindo reset de senha e validação de permissões.",
+      "sortOrder": 59
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Alteração visual simples no Experience Builder (Cores/Menu)",
+      "title": "Alteração Visual Simples no Portal",
+      "description": "Solicitação para ajustar cores, menus, imagens, textos ou elementos visuais simples no Experience Builder.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Alteração visual simples no Experience Builder (Cores/Menu) Alteração Visual Simples no Portal Solicitação para ajustar cores, menus, imagens, textos ou elementos visuais simples no Experience Builder.",
+      "sortOrder": 60
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Branding/Logo",
+      "title": "Atualização de Branding e Logo",
+      "description": "Solicitação para atualizar logotipo, cores, identidade visual ou elementos de marca exibidos no portal.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Branding/Logo Atualização de Branding e Logo Solicitação para atualizar logotipo, cores, identidade visual ou elementos de marca exibidos no portal.",
+      "sortOrder": 61
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Permissão de Sharing Set",
+      "title": "Ajuste de Permissão de Compartilhamento",
+      "description": "Solicitação para corrigir visibilidade de registros por clientes ou parceiros, ajustando regras de Sharing Set e acesso a dados.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Permissão de Sharing Set Ajuste de Permissão de Compartilhamento Solicitação para corrigir visibilidade de registros por clientes ou parceiros, ajustando regras de Sharing Set e acesso a dados.",
+      "sortOrder": 62
+    },
+    {
+      "serviceTitle": "Portais e Experience Cloud",
+      "originalName": "Moderação",
+      "title": "Moderação de Comunidade ou Portal",
+      "description": "Solicitação para remover conteúdo indevido, tratar spam, bloquear usuário ou ajustar regras de moderação.",
+      "category": "Portais",
+      "keywords": "Portais e Experience Cloud Moderação Moderação de Comunidade ou Portal Solicitação para remover conteúdo indevido, tratar spam, bloquear usuário ou ajustar regras de moderação.",
+      "sortOrder": 63
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Erro de Cálculo",
+      "title": "Erro de Cálculo em Cotação",
+      "description": "Solicitação para investigar divergência de cálculo em cotação, quando o valor total não corresponde às linhas, descontos, impostos ou regras aplicadas.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Erro de Cálculo Erro de Cálculo em Cotação Solicitação para investigar divergência de cálculo em cotação, quando o valor total não corresponde às linhas, descontos, impostos ou regras aplicadas.",
+      "sortOrder": 64
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Product Bundle",
+      "title": "Ajuste de Bundle de Produto",
+      "description": "Solicitação para analisar pacote de produtos em que opções não aparecem, não são selecionáveis ou possuem regras incorretas.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Product Bundle Ajuste de Bundle de Produto Solicitação para analisar pacote de produtos em que opções não aparecem, não são selecionáveis ou possuem regras incorretas.",
+      "sortOrder": 65
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Price Rule Falhando",
+      "title": "Falha em Regra de Preço",
+      "description": "Solicitação para corrigir regra de preço que não aplica desconto, acréscimo, condição ou cálculo esperado.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Price Rule Falhando Falha em Regra de Preço Solicitação para corrigir regra de preço que não aplica desconto, acréscimo, condição ou cálculo esperado.",
+      "sortOrder": 66
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Quote Template",
+      "title": "Erro em Template de Cotação",
+      "description": "Solicitação para ajustar geração de PDF ou documento de cotação, incluindo campos sobrepostos, informações ausentes ou formatação incorreta.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Quote Template Erro em Template de Cotação Solicitação para ajustar geração de PDF ou documento de cotação, incluindo campos sobrepostos, informações ausentes ou formatação incorreta.",
+      "sortOrder": 67
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Renewals (Renovação)",
+      "title": "Problema na Renovação de Contrato",
+      "description": "Solicitação para analisar renovação que não foi gerada, foi gerada incorretamente ou trouxe itens divergentes.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Renewals (Renovação) Problema na Renovação de Contrato Solicitação para analisar renovação que não foi gerada, foi gerada incorretamente ou trouxe itens divergentes.",
+      "sortOrder": 68
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Twin Fields",
+      "title": "Falha em Twin Fields",
+      "description": "Solicitação para corrigir sincronização de campos equivalentes entre Produto, Cotação e Linha de Cotação.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Twin Fields Falha em Twin Fields Solicitação para corrigir sincronização de campos equivalentes entre Produto, Cotação e Linha de Cotação.",
+      "sortOrder": 69
+    },
+    {
+      "serviceTitle": "Revenue Cloud, CPQ e Billing",
+      "originalName": "Guided Selling",
+      "title": "Ajuste de Venda Guiada",
+      "description": "Solicitação para corrigir perguntas, condições ou fluxo de venda guiada que não aparece ou não direciona corretamente.",
+      "category": "Receita",
+      "keywords": "Revenue Cloud, CPQ e Billing Guided Selling Ajuste de Venda Guiada Solicitação para corrigir perguntas, condições ou fluxo de venda guiada que não aparece ou não direciona corretamente.",
+      "sortOrder": 70
+    },
+    {
+      "serviceTitle": "Field Service",
+      "originalName": "Erro de Sincronização (App)",
+      "title": "Erro de Sincronização no Aplicativo Field Service",
+      "description": "Solicitação para analisar falha de sincronização no aplicativo mobile, incluindo uso offline, dados não atualizados ou erro de envio.",
+      "category": "Operação de Campo",
+      "keywords": "Field Service Erro de Sincronização (App) Erro de Sincronização no Aplicativo Field Service Solicitação para analisar falha de sincronização no aplicativo mobile, incluindo uso offline, dados não atualizados ou erro de envio.",
+      "sortOrder": 71
+    },
+    {
+      "serviceTitle": "Field Service",
+      "originalName": "Agendamento Falhou",
+      "title": "Falha no Agendamento de Atendimento",
+      "description": "Solicitação para investigar erro de agendamento, ausência de candidatos ou indisponibilidade de recursos para o compromisso.",
+      "category": "Operação de Campo",
+      "keywords": "Field Service Agendamento Falhou Falha no Agendamento de Atendimento Solicitação para investigar erro de agendamento, ausência de candidatos ou indisponibilidade de recursos para o compromisso.",
+      "sortOrder": 72
+    },
+    {
+      "serviceTitle": "Field Service",
+      "originalName": "Território de Serviço",
+      "title": "Ajuste de Território de Serviço",
+      "description": "Solicitação para adicionar, remover ou alterar técnico, horário ou cobertura dentro de um território de serviço.",
+      "category": "Operação de Campo",
+      "keywords": "Field Service Território de Serviço Ajuste de Território de Serviço Solicitação para adicionar, remover ou alterar técnico, horário ou cobertura dentro de um território de serviço.",
+      "sortOrder": 73
+    },
+    {
+      "serviceTitle": "Field Service",
+      "originalName": "Gantt Quebrado",
+      "title": "Erro no Console de Despacho / Gantt",
+      "description": "Solicitação para corrigir falha de carregamento, erro visual ou indisponibilidade no console de despacho.",
+      "category": "Operação de Campo",
+      "keywords": "Field Service Gantt Quebrado Erro no Console de Despacho / Gantt Solicitação para corrigir falha de carregamento, erro visual ou indisponibilidade no console de despacho.",
+      "sortOrder": 74
+    },
+    {
+      "serviceTitle": "Field Service",
+      "originalName": "Maintenance Plan",
+      "title": "Ajuste de Plano de Manutenção",
+      "description": "Solicitação para corrigir plano de manutenção que não gera ordens de trabalho recorrentes ou apresenta comportamento inesperado.",
+      "category": "Operação de Campo",
+      "keywords": "Field Service Maintenance Plan Ajuste de Plano de Manutenção Solicitação para corrigir plano de manutenção que não gera ordens de trabalho recorrentes ou apresenta comportamento inesperado.",
+      "sortOrder": 75
+    },
+    {
+      "serviceTitle": "Field Service",
+      "originalName": "Localização (Geoloc)",
+      "title": "Problema de Geolocalização do Técnico",
+      "description": "Solicitação para analisar técnico que não aparece no mapa, localização desatualizada ou falha de rastreamento.",
+      "category": "Operação de Campo",
+      "keywords": "Field Service Localização (Geoloc) Problema de Geolocalização do Técnico Solicitação para analisar técnico que não aparece no mapa, localização desatualizada ou falha de rastreamento.",
+      "sortOrder": 76
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Debug de Flow",
+      "title": "Análise de Erro em Flow",
+      "description": "Solicitação para investigar falha de automação em Flow, incluindo erro não tratado, envio de e-mail de falha ou interrupção de processo.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Debug de Flow Análise de Erro em Flow Solicitação para investigar falha de automação em Flow, incluindo erro não tratado, envio de e-mail de falha ou interrupção de processo.",
+      "sortOrder": 77
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Apex CPU Limit",
+      "title": "Erro de Limite de CPU em Apex",
+      "description": "Solicitação para analisar processo que excede limites de execução, causando falha por consumo excessivo de processamento.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Apex CPU Limit Erro de Limite de CPU em Apex Solicitação para analisar processo que excede limites de execução, causando falha por consumo excessivo de processamento.",
+      "sortOrder": 78
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Falha de Integração (API)",
+      "title": "Falha de Integração via API",
+      "description": "Solicitação para investigar erro em chamada REST ou SOAP entre sistemas, incluindo códigos 401, 500, timeout, payload inválido ou falha externa.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Falha de Integração (API) Falha de Integração via API Solicitação para investigar erro em chamada REST ou SOAP entre sistemas, incluindo códigos 401, 500, timeout, payload inválido ou falha externa.",
+      "sortOrder": 79
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Ajuste em Fluxo existente (Flow Builder) - Simples",
+      "title": "Ajuste Simples em Flow Existente",
+      "description": "Solicitação para realizar alteração pontual em fluxo existente, como condição, campo, regra, ação ou pequena correção de comportamento.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Ajuste em Fluxo existente (Flow Builder) - Simples Ajuste Simples em Flow Existente Solicitação para realizar alteração pontual em fluxo existente, como condição, campo, regra, ação ou pequena correção de comportamento.",
+      "sortOrder": 80
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Criar Novo Fluxo de Processo (Complexo/Multi-objeto)",
+      "title": "Criação de Flow Complexo",
+      "description": "Solicitação para criar novo fluxo de processo envolvendo múltiplos objetos, regras, caminhos, validações e impactos operacionais.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Criar Novo Fluxo de Processo (Complexo/Multi-objeto) Criação de Flow Complexo Solicitação para criar novo fluxo de processo envolvendo múltiplos objetos, regras, caminhos, validações e impactos operacionais.",
+      "sortOrder": 81
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Configurar Processo de Aprovação multi-etapas",
+      "title": "Configuração de Processo de Aprovação Multi-etapas",
+      "description": "Solicitação para criar ou ajustar processo de aprovação com múltiplos aprovadores, etapas, critérios e notificações.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Configurar Processo de Aprovação multi-etapas Configuração de Processo de Aprovação Multi-etapas Solicitação para criar ou ajustar processo de aprovação com múltiplos aprovadores, etapas, critérios e notificações.",
+      "sortOrder": 82
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Correção de Bug em Trigger Apex (Erro em tempo de execução)",
+      "title": "Correção de Erro em Trigger Apex",
+      "description": "Solicitação para corrigir erro de execução em trigger Apex, incluindo validação de causa raiz, impacto e teste técnico.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Correção de Bug em Trigger Apex (Erro em tempo de execução) Correção de Erro em Trigger Apex Solicitação para corrigir erro de execução em trigger Apex, incluindo validação de causa raiz, impacto e teste técnico.",
+      "sortOrder": 83
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Duplicidade de ID Externo",
+      "title": "Ajuste em Componente LWC",
+      "description": "Solicitação para corrigir ou ajustar componente Lightning Web Component, incluindo comportamento visual, interação, validação ou falha de carregamento.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Duplicidade de ID Externo Ajuste em Componente LWC Solicitação para corrigir ou ajustar componente Lightning Web Component, incluindo comportamento visual, interação, validação ou falha de carregamento.",
+      "sortOrder": 84
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Outbound Change Set",
+      "title": "Criação e Validação de Change Set",
+      "description": "Solicitação para preparar pacote de deploy, validar dependências e promover alterações entre ambientes.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Outbound Change Set Criação e Validação de Change Set Solicitação para preparar pacote de deploy, validar dependências e promover alterações entre ambientes.",
+      "sortOrder": 85
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Certificado Expirando",
+      "title": "Renovação ou Atualização de Certificado",
+      "description": "Solicitação para tratar certificado próximo ao vencimento, incluindo análise de impacto em SSL, SAML, integrações ou autenticação.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Certificado Expirando Renovação ou Atualização de Certificado Solicitação para tratar certificado próximo ao vencimento, incluindo análise de impacto em SSL, SAML, integrações ou autenticação.",
+      "sortOrder": 86
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Falha de Autenticação em Integrações",
+      "title": "Falha de Autenticação em Integrações",
+      "description": "Solicitação para investigar falha de autenticação entre sistemas causada por token, certificado, credencial, segredo expirado ou configuração de segurança.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Falha de Autenticação em Integrações Falha de Autenticação em Integrações Solicitação para investigar falha de autenticação entre sistemas causada por token, certificado, credencial, segredo expirado ou configuração de segurança.",
+      "sortOrder": 87
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Mapeamento de Campos da API",
+      "title": "Mapeamento de Campos em Integração",
+      "description": "Solicitação para incluir, ajustar ou validar novos campos no contrato de integração, garantindo que origem e destino recebam as informações corretamente.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Mapeamento de Campos da API Mapeamento de Campos em Integração Solicitação para incluir, ajustar ou validar novos campos no contrato de integração, garantindo que origem e destino recebam as informações corretamente.",
+      "sortOrder": 88
+    },
+    {
+      "serviceTitle": "Automação e Integrações",
+      "originalName": "Sandbox Refresh",
+      "title": "Atualização de Ambiente Sandbox",
+      "description": "Solicitação para realizar refresh de sandbox, considerando perda de dados do ambiente de teste, janela de execução e validações após atualização.",
+      "category": "Integrações",
+      "keywords": "Automação e Integrações Sandbox Refresh Atualização de Ambiente Sandbox Solicitação para realizar refresh de sandbox, considerando perda de dados do ambiente de teste, janela de execução e validações após atualização.",
+      "sortOrder": 89
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Relatório Retorna Vazio",
+      "title": "Relatório sem Dados",
+      "description": "Solicitação para analisar relatório que não retorna informações esperadas, verificando filtros, escopo, permissões, hierarquia e fonte de dados.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Relatório Retorna Vazio Relatório sem Dados Solicitação para analisar relatório que não retorna informações esperadas, verificando filtros, escopo, permissões, hierarquia e fonte de dados.",
+      "sortOrder": 90
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Criar Dashboard",
+      "title": "Criação de Dashboard",
+      "description": "Solicitação para criar painel com componentes visuais, indicadores e filtros para acompanhamento executivo ou operacional.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Criar Dashboard Criação de Dashboard Solicitação para criar painel com componentes visuais, indicadores e filtros para acompanhamento executivo ou operacional.",
+      "sortOrder": 91
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Subscription Falhou",
+      "title": "Falha no Envio Agendado de Relatório ou Dashboard",
+      "description": "Solicitação para investigar assinatura agendada que não enviou e-mail, não executou ou apresentou erro de entrega.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Subscription Falhou Falha no Envio Agendado de Relatório ou Dashboard Solicitação para investigar assinatura agendada que não enviou e-mail, não executou ou apresentou erro de entrega.",
+      "sortOrder": 92
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Report Type Customizado",
+      "title": "Criação de Tipo de Relatório Customizado",
+      "description": "Solicitação para criar tipo de relatório que relacione objetos específicos e permita análise de dados não disponível nos relatórios padrão.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Report Type Customizado Criação de Tipo de Relatório Customizado Solicitação para criar tipo de relatório que relacione objetos específicos e permita análise de dados não disponível nos relatórios padrão.",
+      "sortOrder": 93
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Snapshot de Dados",
+      "title": "Configuração de Snapshot de Dados",
+      "description": "Solicitação para registrar histórico periódico de indicadores ou dados, como acompanhamento mensal de pipeline ou evolução de métricas.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Snapshot de Dados Configuração de Snapshot de Dados Solicitação para registrar histórico periódico de indicadores ou dados, como acompanhamento mensal de pipeline ou evolução de métricas.",
+      "sortOrder": 94
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Criação de Relatório Simples / Dashboard",
+      "title": "Criação de Relatório ou Dashboard Simples",
+      "description": "Solicitação para criar relatório ou dashboard de baixa complexidade com dados, filtros e visualização já definidos.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Criação de Relatório Simples / Dashboard Criação de Relatório ou Dashboard Simples Solicitação para criar relatório ou dashboard de baixa complexidade com dados, filtros e visualização já definidos.",
+      "sortOrder": 95
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Criar \"Custom Report Type\" com vários objetos",
+      "title": "Tipo de Relatório com Múltiplos Objetos",
+      "description": "Solicitação para criar tipo de relatório customizado envolvendo múltiplos objetos e relacionamentos para análise consolidada.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Criar \"Custom Report Type\" com vários objetos Tipo de Relatório com Múltiplos Objetos Solicitação para criar tipo de relatório customizado envolvendo múltiplos objetos e relacionamentos para análise consolidada.",
+      "sortOrder": 96
+    },
+    {
+      "serviceTitle": "Relatórios e Analytics",
+      "originalName": "Pasta Pública",
+      "title": "Criação ou Ajuste de Pasta Pública",
+      "description": "Solicitação para criar, organizar ou ajustar acesso a pasta pública utilizada para relatórios e dashboards.",
+      "category": "Analytics",
+      "keywords": "Relatórios e Analytics Pasta Pública Criação ou Ajuste de Pasta Pública Solicitação para criar, organizar ou ajustar acesso a pasta pública utilizada para relatórios e dashboards.",
+      "sortOrder": 97
+    },
+    {
+      "serviceTitle": "Ecossistema e Pacotes Instalados",
+      "originalName": "Erro em pacote instalado (AppExchange - ex: DocuSign)",
+      "title": "Erro em Pacote Instalado / AppExchange",
+      "description": "Solicitação para investigar falha em aplicativo ou pacote instalado, como DocuSign ou solução de terceiros, avaliando configuração, permissões e integração.",
+      "category": "Administração",
+      "keywords": "Ecossistema e Pacotes Instalados Erro em pacote instalado (AppExchange - ex: DocuSign) Erro em Pacote Instalado / AppExchange Solicitação para investigar falha em aplicativo ou pacote instalado, como DocuSign ou solução de terceiros, avaliando configuração, permissões e integração.",
+      "sortOrder": 98
+    }
+  ]
+}

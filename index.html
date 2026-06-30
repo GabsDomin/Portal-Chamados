@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portal de Chamados</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=20260626-transparent" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260626-password-icon-align" />
+  </head>
+  <body>
+    <section class="login-screen" id="loginScreen">
+      <div class="login-panel">
+        <div class="login-brand">
+          <img class="brand-logo brand-logo-large" src="assets/sottelli-logo.png" alt="Sottelli" />
+        </div>
+        <p class="eyebrow">Acesso ao portal</p>
+        <h1>Entre no portal de chamados</h1>
+        <p class="login-copy">Use seu usuário e senha para acessar seus chamados, acompanhar solicitações e consultar orientações.</p>
+        <form class="login-form" id="loginForm" novalidate>
+          <label>
+            E-mail
+            <input name="email" type="email" autocomplete="email" placeholder="email@empresa.com" required />
+            <span class="field-error"></span>
+          </label>
+          <label>
+            Senha
+            <span class="password-field">
+              <input name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required />
+              <button class="password-toggle" type="button" id="togglePassword" aria-label="Mostrar senha" title="Mostrar senha">
+                <i data-lucide="eye"></i>
+              </button>
+            </span>
+            <span class="field-error"></span>
+          </label>
+          <button class="primary-button full" type="submit" id="loginButton">Entrar</button>
+          <p class="form-message" id="loginMessage" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <aside class="login-aside">
+        <span class="success-icon"><i data-lucide="shield-check"></i></span>
+        <h2>Atendimento em um só lugar</h2>
+        <p>Abra solicitações, acompanhe prazos, responda chamados e encontre orientações sem depender de troca de e-mails.</p>
+        <ul class="integration-list">
+          <li>Histórico de chamados organizado.</li>
+          <li>Avisos e status sempre visíveis.</li>
+          <li>Base de conhecimento para respostas rápidas.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+        <a class="brand" href="#home" data-route="home" aria-label="Ir para início">
+          <img class="brand-logo" src="assets/sottelli-logo.png" alt="Sottelli" />
+        </a>
+
+        <nav class="main-nav" aria-label="Menu principal">
+          <button class="nav-link active" type="button" data-route="home">Início</button>
+          <button class="nav-link" type="button" data-route="open-ticket">Abrir chamado</button>
+          <button class="nav-link" type="button" data-route="my-tickets">Meus chamados</button>
+          <button class="nav-link" type="button" data-route="knowledge">Base de conhecimento</button>
+          <button class="nav-link" type="button" data-route="announcements">Avisos</button>
+        </nav>
+
+        <div class="user-menu" aria-label="Usuário logado">
+          <button class="icon-button" type="button" aria-label="Notificações" title="Notificações">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <button class="profile-button" type="button" id="profileMenuButton" aria-label="Abrir menu do perfil" aria-expanded="false">
+            <span class="avatar">GF</span>
+            <span class="profile-copy">
+              <strong id="profileName">Usuário</strong>
+              <small>Autenticado</small>
+            </span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="profile-menu-panel" id="profileMenuPanel" hidden>
+            <button type="button" id="openProfileSettings">
+              <i data-lucide="settings"></i>
+              Configurações
+            </button>
+          </div>
+          <button class="secondary-button compact" type="button" id="logoutButton">Sair</button>
+        </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="view active" id="home" data-view="home">
+          <section class="hero">
+            <div class="hero-art" aria-hidden="true">
+              <span class="tile t1"><i data-lucide="message-square-plus"></i></span>
+              <span class="tile t2"><i data-lucide="cloud-cog"></i></span>
+              <span class="tile t3"><i data-lucide="shield-check"></i></span>
+              <span class="tile t4"><i data-lucide="timer"></i></span>
+            </div>
+            <div class="hero-content">
+              <p class="eyebrow">Central de atendimento kEEP</p>
+              <h1>Como podemos ajudar?</h1>
+              <p>Encontre um serviço, abra uma solicitação, acompanhe seus chamados ou consulte artigos da base de conhecimento.</p>
+              <form class="search-bar" data-search-form>
+                <i data-lucide="search"></i>
+                <input type="search" placeholder="Busque por serviço, sistema, erro, solicitação ou artigo..." />
+                <button class="primary-button" type="submit">Buscar</button>
+              </form>
+            </div>
+          </section>
+
+          <section class="quick-actions" aria-label="Ações rápidas">
+            <article class="action-card accent-blue" data-route-card="open-ticket">
+              <i data-lucide="circle-plus"></i>
+              <h2>Abrir chamado</h2>
+              <p>Registre uma solicitação, erro ou dúvida para atendimento.</p>
+              <button class="ghost-button" type="button">Acessar <i data-lucide="arrow-right"></i></button>
+            </article>
+            <article class="action-card accent-teal" data-route-card="my-tickets">
+              <i data-lucide="clipboard-list"></i>
+              <h2>Meus chamados</h2>
+              <p>Acompanhe o status das suas solicitações.</p>
+              <button class="ghost-button" type="button">Acessar <i data-lucide="arrow-right"></i></button>
+            </article>
+            <article class="action-card accent-coral" data-route-card="my-tickets">
+              <i data-lucide="radar"></i>
+              <h2>Acompanhar solicitação</h2>
+              <p>Consulte o andamento de um chamado e visualize atualizações.</p>
+              <button class="ghost-button" type="button">Acessar <i data-lucide="arrow-right"></i></button>
+            </article>
+            <article class="action-card accent-pink" data-route-card="knowledge">
+              <i data-lucide="book-open"></i>
+              <h2>Base de conhecimento</h2>
+              <p>Encontre orientações, respostas rápidas e artigos de apoio.</p>
+              <button class="ghost-button" type="button">Acessar <i data-lucide="arrow-right"></i></button>
+            </article>
+          </section>
+
+          <div class="home-grid">
+            <section class="content-block">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Catálogo</p>
+                  <h2>Escolha um serviço</h2>
+                </div>
+                <button class="text-button" type="button" data-route="open-ticket">Abrir chamado</button>
+              </div>
+              <div class="service-carousel" id="serviceCarousel" aria-label="Catálogo de serviços">
+                <div class="service-carousel-viewport">
+                  <div class="service-carousel-track" id="serviceGrid"></div>
+                </div>
+                <div class="service-carousel-dots" id="serviceCarouselDots" aria-label="Páginas do catálogo"></div>
+              </div>
+            </section>
+
+            <aside class="side-panel" aria-label="Informações importantes">
+              <section class="panel-block">
+                <div class="panel-title">
+                  <i data-lucide="megaphone"></i>
+                  <h2>Avisos</h2>
+                </div>
+                <ul class="compact-list" id="announcementPreview"></ul>
+                <button class="secondary-button full" type="button" data-route="announcements">Ver todos</button>
+              </section>
+
+              <section class="panel-block sla-block">
+                <div class="panel-title">
+                  <i data-lucide="clock-3"></i>
+                  <h2>SLA de atendimento</h2>
+                </div>
+                <div class="sla-row">
+                  <span>Primeira resposta</span>
+                  <strong>Até 1 hora útil</strong>
+                </div>
+                <div class="sla-row">
+                  <span>Resolução</span>
+                  <strong>Até 4 horas úteis</strong>
+                </div>
+                <div class="sla-row">
+                  <span>Horário</span>
+                  <strong>Horário comercial</strong>
+                </div>
+              </section>
+            </aside>
+          </div>
+
+          <section class="content-block">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Autoatendimento</p>
+                <h2>Artigos em destaque</h2>
+              </div>
+              <button class="text-button" type="button" data-route="knowledge">Ver todos os artigos</button>
+            </div>
+            <div class="article-grid" id="featuredArticles"></div>
+          </section>
+        </section>
+
+        <section class="view" id="open-ticket" data-view="open-ticket">
+          <div class="page-title">
+            <button class="back-button" type="button" data-route="home"><i data-lucide="arrow-left"></i></button>
+            <div>
+              <p class="eyebrow">Solicitação</p>
+              <h1>Abertura de Chamado</h1>
+              <p>Preencha as informações da solicitação para que o atendimento possa agir com rapidez.</p>
+            </div>
+          </div>
+
+          <div class="form-layout">
+            <form class="ticket-form" id="ticketForm" novalidate>
+              <div class="request-summary">
+                <div>
+                  <i data-lucide="id-card"></i>
+                  <span>
+                    <strong>Dados do solicitante</strong>
+                    <small>Essas informações são preenchidas automaticamente pelo seu cadastro.</small>
+                  </span>
+                </div>
+              </div>
+              <div class="form-grid">
+                <label>
+                  Nome do solicitante
+                  <input name="name" type="text" value="Gabriel Fernandes" readonly required />
+                  <span class="hint">Preenchido automaticamente pelo seu cadastro.</span>
+                  <span class="field-error"></span>
+                </label>
+                <label>
+                  E-mail do solicitante
+                  <input name="email" type="email" value="gabriel@empresa.com" readonly required />
+                  <span class="hint">E-mail associado ao usuário autenticado.</span>
+                  <span class="field-error"></span>
+                </label>
+                <label>
+                  Empresa
+                  <input name="company" type="text" value="kEEP" readonly />
+                  <span class="hint">Empresa vinculada ao seu cadastro no atendimento.</span>
+                </label>
+                <label>
+                  Telefone
+                  <input name="phone" type="text" value="" readonly />
+                  <span class="hint">Telefone vinculado ao seu cadastro no atendimento.</span>
+                </label>
+                <section class="service-finder span-2" aria-label="Buscar serviço">
+                  <div class="service-finder-heading">
+                    <p class="eyebrow">Encontre o serviço</p>
+                  </div>
+                  <div class="service-search-box">
+                    <i data-lucide="search"></i>
+                    <input id="serviceSearchInput" type="search" placeholder="Ex.: criação de usuário, reset MFA, erro SSO..." autocomplete="off" />
+                  </div>
+                  <div class="service-search-results" id="serviceSearchResults"></div>
+                  <p class="selected-service-summary" id="selectedServiceSummary">Selecione uma opção da busca para classificar o chamado.</p>
+                </section>
+                <input name="serviceType" type="hidden" />
+                <input name="category" type="hidden" />
+                <input name="subcategory" type="hidden" />
+                <input name="priority" type="hidden" value="Media" />
+                <label class="span-2">
+                  Assunto
+                  <input name="subject" type="text" placeholder="Resumo objetivo da solicitação" required />
+                  <span class="field-error"></span>
+                </label>
+                <label class="span-2">
+                  Descrição detalhada
+                  <textarea name="description" rows="7" placeholder="Descreva o problema ou solicitação com o máximo de detalhes possível." required></textarea>
+                  <span class="hint">Inclua sistema afetado, impacto, horário do erro e passos para reproduzir.</span>
+                  <span class="field-error"></span>
+                </label>
+                <label class="file-field span-2">
+                  Anexo / print / arquivo
+                  <div class="attachment-picker">
+                    <input id="attachmentInput" name="attachment" type="file" multiple />
+                    <label class="secondary-button compact" for="attachmentInput">
+                      <i data-lucide="paperclip"></i>
+                      Adicionar arquivos
+                    </label>
+                    <span id="attachmentCount">Nenhum arquivo escolhido</span>
+                  </div>
+                  <ul class="attachment-list" id="attachmentList"></ul>
+                  <span class="hint">Anexe um ou mais prints ou arquivos para agilizar o atendimento.</span>
+                </label>
+              </div>
+              <div class="form-actions">
+                <button class="secondary-button" type="button" id="clearForm">Limpar formulário</button>
+                <button class="secondary-button" type="button" data-route="home">Cancelar</button>
+                <button class="primary-button" type="submit" id="submitTicket">Enviar chamado</button>
+              </div>
+              <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+            </form>
+
+            <aside class="support-panel">
+              <i data-lucide="sparkles"></i>
+              <h2>Para agilizar o atendimento</h2>
+              <ul class="support-tips">
+                <li>Descreva o impacto para sua operação.</li>
+                <li>Informe sistema, tela e horário aproximado.</li>
+                <li>Anexe prints, mensagens de erro ou arquivos úteis.</li>
+                <li>Selecione o serviço pela busca para direcionar o atendimento.</li>
+              </ul>
+              <div class="support-sla">
+                <span>Primeira resposta</span>
+                <strong>Até 1 hora útil</strong>
+              </div>
+              <div class="support-sla">
+                <span>Resolução padrão</span>
+                <strong>Até 4 horas úteis</strong>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="success" data-view="success">
+          <div class="success-card">
+            <span class="success-icon"><i data-lucide="check"></i></span>
+            <p class="eyebrow">Confirmação</p>
+            <h1>Chamado criado com sucesso!</h1>
+            <p>Seu chamado foi registrado e encaminhado para atendimento.</p>
+            <strong class="ticket-number">Número do chamado: <span id="createdTicketNumber">Aguardando retorno</span></strong>
+            <div class="success-actions">
+              <button class="primary-button" type="button" data-route="my-tickets">Ver meus chamados</button>
+              <button class="secondary-button" type="button" data-route="home">Voltar para a home</button>
+              <button class="secondary-button" type="button" data-route="open-ticket">Abrir novo chamado</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="my-tickets" data-view="my-tickets">
+          <div class="page-title">
+            <button class="back-button" type="button" data-route="home"><i data-lucide="arrow-left"></i></button>
+            <div>
+              <p class="eyebrow">Histórico</p>
+              <h1>Meus chamados</h1>
+              <p>Acompanhe o histórico e o andamento das suas solicitações.</p>
+            </div>
+          </div>
+
+          <section class="filter-bar">
+            <input type="search" placeholder="Número do chamado" />
+            <select>
+              <option>Status</option>
+              <option>Em andamento</option>
+              <option>Aguardando solicitante</option>
+              <option>Fechado</option>
+            </select>
+            <select>
+              <option>Serviço</option>
+              <option>Salesforce</option>
+              <option>Marketing Cloud</option>
+            </select>
+            <input type="date" aria-label="Período" />
+            <select>
+              <option>Categoria</option>
+              <option>Acesso</option>
+              <option>Erro</option>
+              <option>Mudança</option>
+            </select>
+            <button class="primary-button" type="button">Buscar</button>
+            <button class="secondary-button" type="button">Limpar filtros</button>
+          </section>
+
+          <section class="ticket-list" id="ticketList"></section>
+        </section>
+
+        <section class="view" id="ticket-detail" data-view="ticket-detail">
+          <div class="page-title">
+            <button class="back-button" type="button" data-route="my-tickets"><i data-lucide="arrow-left"></i></button>
+            <div>
+              <p class="eyebrow">Detalhe do chamado</p>
+              <h1>Detalhes da solicitação</h1>
+              <p>Selecione um chamado em Meus chamados para visualizar as informações completas.</p>
+            </div>
+          </div>
+
+          <div class="detail-layout">
+            <section class="detail-main">
+              <div class="empty-state">
+                <i data-lucide="file-search"></i>
+                <h2>Nenhum chamado selecionado</h2>
+                <p>Abra a tela Meus chamados e escolha uma solicitação para consultar detalhes, histórico e anexos.</p>
+                <button class="primary-button" type="button" data-route="my-tickets">Ver meus chamados</button>
+              </div>
+            </section>
+            <aside class="detail-side">
+              <h2>Ações</h2>
+              <button class="primary-button full" type="button" disabled>Adicionar informação</button>
+              <button class="secondary-button full" type="button" disabled>Anexar arquivo</button>
+              <button class="secondary-button full" type="button" disabled>Responder chamado</button>
+              <button class="text-button full" type="button" data-route="my-tickets">Voltar para meus chamados</button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="knowledge" data-view="knowledge">
+          <div class="page-title">
+            <button class="back-button" type="button" data-route="home"><i data-lucide="arrow-left"></i></button>
+            <div>
+              <p class="eyebrow">Base de conhecimento</p>
+              <h1>Artigos e orientações</h1>
+              <p>Pesquise conteúdos de apoio para resolver dúvidas rapidamente.</p>
+            </div>
+          </div>
+          <section class="knowledge-toolbar">
+            <div class="search-bar light">
+              <i data-lucide="search"></i>
+              <input type="search" placeholder="Buscar artigo" />
+              <button class="primary-button" type="button">Buscar</button>
+            </div>
+            <div class="category-pills">
+              <button class="pill active" type="button">Todos</button>
+              <button class="pill" type="button">Salesforce</button>
+              <button class="pill" type="button">Marketing Cloud</button>
+              <button class="pill" type="button">Acessos</button>
+            </div>
+          </section>
+          <div class="article-grid large" id="knowledgeArticles"></div>
+        </section>
+
+        <section class="view" id="announcements" data-view="announcements">
+          <div class="page-title">
+            <button class="back-button" type="button" data-route="home"><i data-lucide="arrow-left"></i></button>
+            <div>
+              <p class="eyebrow">Comunicados</p>
+              <h1>Avisos do portal</h1>
+              <p>Acompanhe manutenções, atualizações e comunicações importantes.</p>
+            </div>
+          </div>
+          <section class="announcement-list" id="announcementList"></section>
+        </section>
+      </main>
+
+    <footer class="footer">
+      <span>Sottelli Service Portal</span>
+      <span>Atendimento, chamados e base de conhecimento</span>
+    </footer>
+    </div>
+
+    <div class="modal-backdrop" id="profileModal" hidden>
+      <section class="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Meu perfil</p>
+            <h2 id="profileModalTitle">Configurações do solicitante</h2>
+          </div>
+          <button class="icon-button" type="button" id="closeProfileModal" aria-label="Fechar configurações">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <form class="profile-form" id="profileForm" novalidate>
+          <div class="form-grid">
+            <label>
+              Nome
+              <input name="firstName" type="text" autocomplete="given-name" />
+            </label>
+            <label>
+              Sobrenome
+              <input name="surName" type="text" autocomplete="family-name" />
+            </label>
+            <label class="span-2">
+              E-mail
+              <input name="email" type="email" readonly />
+              <span class="hint">O e-mail é usado para localizar seu cadastro no atendimento e não pode ser alterado aqui.</span>
+            </label>
+            <label>
+              Telefone
+              <input name="phoneNumber" type="tel" autocomplete="tel" inputmode="numeric" placeholder="(11) 3333-4444" />
+            </label>
+            <label>
+              Celular
+              <span class="phone-input-group">
+                <select name="mobileCountryCode" aria-label="Código do país do celular">
+                  <option value="55" selected>+55 Brasil</option>
+                  <option value="1">+1 Estados Unidos / Canadá</option>
+                  <option value="351">+351 Portugal</option>
+                  <option value="54">+54 Argentina</option>
+                  <option value="56">+56 Chile</option>
+                  <option value="57">+57 Colômbia</option>
+                  <option value="52">+52 México</option>
+                  <option value="44">+44 Reino Unido</option>
+                  <option value="34">+34 Espanha</option>
+                  <option value="33">+33 França</option>
+                  <option value="49">+49 Alemanha</option>
+                  <option value="39">+39 Itália</option>
+                </select>
+                <input name="mobileNumber" type="tel" autocomplete="tel" inputmode="numeric" placeholder="(11) 99999-9999" />
+              </span>
+            </label>
+          </div>
+          <p class="form-message" id="profileMessage" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button class="secondary-button" type="button" id="cancelProfileSettings">Cancelar</button>
+            <button class="primary-button" type="submit" id="saveProfileButton">Salvar alterações</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js?v=20260626-login-xhr-fix"></script>
+  </body>
+</html>

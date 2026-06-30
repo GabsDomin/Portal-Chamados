@@ -1,0 +1,9 @@
+node_modules/
+.env
+npm-debug.log*
+
+/lib/generated/prisma
+.agents/
+.cursor/
+skills-lock.json
+data/users.json

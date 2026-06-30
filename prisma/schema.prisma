@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model PortalUser {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  name         String
+  company      String?
+  callerId     String?  @map("caller_id")
+  role         String   @default("Cliente")
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("portal_users")
+}
+
+model ServiceCatalog {
+  id          String   @id @default(uuid()) @db.Uuid
+  icon        String
+  title       String
+  subtitle    String
+  sla         String
+  description String
+  sortOrder   Int      @default(0) @map("sort_order")
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  requestTypes ServiceRequestType[]
+
+  @@map("service_catalog")
+}
+
+model ServiceRequestType {
+  id           String         @id @default(uuid()) @db.Uuid
+  serviceId    String         @map("service_id") @db.Uuid
+  originalName String?        @map("original_name")
+  title        String
+  description  String
+  category     String
+  keywords     String         @default("")
+  sortOrder    Int            @default(0) @map("sort_order")
+  active       Boolean        @default(true)
+  createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime       @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+  service      ServiceCatalog @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@index([serviceId])
+  @@map("service_request_types")
+}
+
+model KnowledgeArticle {
+  id          String   @id @default(uuid()) @db.Uuid
+  icon        String
+  title       String
+  description String
+  category    String   @default("Geral")
+  published   Boolean  @default(true)
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("knowledge_articles")
+}
+
+model Announcement {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String
+  eventDate   DateTime @map("event_date") @db.Date
+  status      String
+  category    String
+  description String
+  published   Boolean  @default(true)
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("announcements")
+}
+
+model ServiceStatus {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  status    String
+  tone      String   @default("ok")
+  sortOrder Int      @default(0) @map("sort_order")
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("service_statuses")
+}
