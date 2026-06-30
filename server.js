@@ -11,14 +11,15 @@ dotenv.config();
 const { isSupabaseConfigured, signInPortalUser } = require("./lib/supabase");
 const { getPrisma, isPrismaConfigured } = require("./lib/db");
 const { getPortalContent } = require("./lib/portal-content");
+const { getEnv } = require("./lib/env");
 
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 
 const PORT = Number(process.env.PORT || 4173);
-const TOPDESK_BASE_URL = normalizeBaseUrl(process.env.TOPDESK_BASE_URL || "https://keep-sottelli.topdesk.net");
-const TOPDESK_USERNAME = process.env.TOPDESK_USERNAME;
-const TOPDESK_APP_PASSWORD = process.env.TOPDESK_APP_PASSWORD;
+const TOPDESK_BASE_URL = normalizeBaseUrl(getEnv("TOPDESK_BASE_URL", ["URL_BASE_TOPDESK"]) || "https://keep-sottelli.topdesk.net");
+const TOPDESK_USERNAME = getEnv("TOPDESK_USERNAME");
+const TOPDESK_APP_PASSWORD = getEnv("TOPDESK_APP_PASSWORD", ["SENHA_TOPDESK_APP"]);
 const USERS_FILE = path.join(__dirname, "data", "users.json");
 const sessions = new Map();
 const loginAttempts = new Map();

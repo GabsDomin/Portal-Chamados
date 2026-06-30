@@ -26,6 +26,16 @@ DATABASE_URL=
 DIRECT_URL=
 ```
 
+Na Railway, o app tambem aceita estes aliases caso as variaveis ja tenham sido criadas com nomes em portugues:
+
+| Nome padrao | Alias aceito |
+|-------------|--------------|
+| `DATABASE_URL` | `URL_DO_BANCO_DE_DADOS` |
+| `DIRECT_URL` | `URL_DIRETA` |
+| `SUPABASE_URL` | `URL_SUPABASE` |
+| `TOPDESK_BASE_URL` | `URL_BASE_TOPDESK` |
+| `TOPDESK_APP_PASSWORD` | `SENHA_TOPDESK_APP` |
+
 3. Inicie:
 
 ```bash
