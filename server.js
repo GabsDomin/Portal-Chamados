@@ -142,24 +142,22 @@ app.post("/api/login", async (request, response) => {
 });
 
 async function authenticatePortalUser(email, password) {
-  if (isSupabaseConfigured()) {
-    return signInPortalUser(email, password);
-  }
-
   if (isPrismaConfigured()) {
     const user = await findPortalUserByEmailPrisma(email);
-    if (!user || !verifyPassword(password, user.passwordHash)) {
-      return null;
+    if (user && verifyPassword(password, user.passwordHash)) {
+      return {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        company: user.company || "",
+        callerId: user.callerId || "",
+        role: user.role,
+      };
     }
+  }
 
-    return {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      company: user.company || "",
-      callerId: user.callerId || "",
-      role: user.role,
-    };
+  if (isSupabaseConfigured()) {
+    return signInPortalUser(email, password);
   }
 
   const user = findPortalUserByEmail(email);

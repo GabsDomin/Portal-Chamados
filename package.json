@@ -12,6 +12,7 @@
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "db:seed": "node prisma/seed.js",
+    "db:upsert-users": "node scripts/upsert-portal-users.js",
     "db:import-catalog": "node scripts/import-service-catalog.js",
     "postinstall": "prisma generate"
   },
