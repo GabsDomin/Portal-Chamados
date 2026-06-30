@@ -15,7 +15,6 @@ let currentTickets = [];
 let activeServiceSlide = 0;
 let serviceCarouselTimer;
 let selectedAttachmentFiles = [];
-const serviceCardsPerSlide = 3;
 const ignoredSearchTerms = new Set([
   "a",
   "ao",
@@ -87,7 +86,7 @@ function renderServices() {
     return;
   }
 
-  const slides = chunkServices(services, serviceCardsPerSlide);
+  const slides = chunkServices(services, getServiceCardsPerSlide());
   activeServiceSlide = Math.min(activeServiceSlide, slides.length - 1);
 
   grid.innerHTML = slides
@@ -135,8 +134,14 @@ function renderServiceCard(service) {
 }
 
 function renderSlidePlaceholders(cardCount) {
-  const missingCards = Math.max(serviceCardsPerSlide - cardCount, 0);
+  const missingCards = Math.max(getServiceCardsPerSlide() - cardCount, 0);
   return Array.from({ length: missingCards }, () => `<span class="service-slot-placeholder" aria-hidden="true"></span>`).join("");
+}
+
+function getServiceCardsPerSlide() {
+  if (window.matchMedia("(max-width: 720px)").matches) return 1;
+  if (window.matchMedia("(max-width: 1080px)").matches) return 2;
+  return 3;
 }
 
 function chunkServices(items, size) {
@@ -1311,12 +1316,29 @@ function refreshIcons() {
   }
 }
 
+function setupResponsiveCarousel() {
+  let previousCardsPerSlide = getServiceCardsPerSlide();
+  let resizeTimer;
+
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      const nextCardsPerSlide = getServiceCardsPerSlide();
+      if (nextCardsPerSlide === previousCardsPerSlide) return;
+      previousCardsPerSlide = nextCardsPerSlide;
+      activeServiceSlide = 0;
+      renderServices();
+    }, 160);
+  });
+}
+
 async function init() {
   setupRouting();
   setupTicketForm();
   setupServiceFinder();
   setupSearch();
   setupAuth();
+  setupResponsiveCarousel();
   renderTickets([]);
 
   try {

@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
   background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 48%, #ffffff 100%);
+  overflow-x: hidden;
 }
 
 button,
@@ -37,6 +39,14 @@ textarea {
 
 button {
   cursor: pointer;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: rgba(55, 166, 222, 0.14);
 }
 
 .fallback-icon {
@@ -571,6 +581,17 @@ main {
   padding: 10px 16px;
   font-weight: 800;
   white-space: nowrap;
+}
+
+.primary-button,
+.secondary-button,
+.nav-link,
+.profile-button,
+.icon-button,
+.back-button,
+.pill,
+.carousel-dot {
+  touch-action: manipulation;
 }
 
 .primary-button {
@@ -1865,7 +1886,19 @@ textarea {
 
 @media (max-width: 1080px) {
   .login-screen {
+    min-height: 100svh;
     grid-template-columns: 1fr;
+  }
+
+  .login-panel {
+    min-height: 100svh;
+    align-items: center;
+    padding: clamp(28px, 7vw, 64px) 24px;
+    text-align: left;
+  }
+
+  .login-panel > * {
+    width: min(480px, 100%);
   }
 
   .login-aside {
@@ -1879,6 +1912,10 @@ textarea {
 
   .brand {
     order: 1;
+  }
+
+  .brand-logo {
+    width: 146px;
   }
 
   .user-menu {
@@ -1896,7 +1933,11 @@ textarea {
   .quick-actions,
   .article-grid,
   .article-grid.large {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-slide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .home-grid,
@@ -1906,71 +1947,154 @@ textarea {
   }
 
   .side-panel,
-  .integration-panel {
+  .integration-panel,
+  .support-panel {
     position: static;
   }
 
   .filter-bar,
   .ticket-card {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ticket-card {
+    align-items: start;
+  }
+
+  .ticket-card .secondary-button {
+    width: 100%;
   }
 }
 
 @media (max-width: 720px) {
+  :root {
+    --shadow: 0 14px 34px rgba(31, 36, 48, 0.1);
+  }
+
   main,
   .footer {
     width: min(100% - 24px, 1180px);
   }
 
+  main {
+    margin-top: 16px;
+  }
+
+  .login-panel {
+    justify-content: start;
+    padding: max(28px, env(safe-area-inset-top)) 18px max(26px, env(safe-area-inset-bottom));
+  }
+
+  .login-brand {
+    margin-bottom: 24px;
+  }
+
+  .brand-logo-large {
+    width: min(190px, 62vw);
+  }
+
+  .login-panel h1 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .login-copy {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .login-form {
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .login-form input,
+  input,
+  select,
+  textarea {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .topbar {
+    position: sticky;
+  }
+
   .topbar-inner {
-    padding: 12px;
+    min-height: auto;
+    padding: 10px 12px 12px;
     row-gap: 10px;
   }
 
+  .brand-logo {
+    width: 128px;
+  }
+
   .main-nav {
-    padding: 0;
+    gap: 8px;
+    margin: 0 -12px;
+    padding: 0 12px 2px;
+    scroll-padding-inline: 12px;
   }
 
-  .brand {
-    min-width: auto;
+  .nav-link {
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 13px;
+    background: rgba(65, 12, 65, 0.04);
   }
 
-  .profile-copy {
-    display: none;
-  }
-
+  .profile-copy,
   #logoutButton {
     display: none;
   }
 
+  .profile-button {
+    min-height: 42px;
+    padding: 4px;
+  }
+
+  .profile-menu-panel {
+    right: 0;
+    min-width: min(220px, calc(100vw - 24px));
+  }
+
+  .icon-button,
+  .back-button {
+    width: 42px;
+    height: 42px;
+  }
+
   .hero {
     min-height: auto;
-    padding: 28px 18px;
+    padding: 26px 18px 22px;
+  }
+
+  .hero::after,
+  .tile {
+    display: none;
   }
 
   .hero h1,
   .page-title h1,
   .success-card h1 {
-    font-size: 34px;
+    font-size: 32px;
+    line-height: 1.08;
   }
 
   .hero p:not(.eyebrow),
   .page-title p,
   .success-card p {
-    font-size: 16px;
-  }
-
-  .search-bar,
-  .form-actions,
-  .success-actions,
-  .announcement-card {
-    align-items: stretch;
-    flex-direction: column;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .search-bar {
     display: grid;
     grid-template-columns: auto 1fr;
+    min-height: 58px;
+    margin-top: 20px;
+    padding: 8px 10px;
   }
 
   .search-bar .primary-button {
@@ -1989,25 +2113,313 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .quick-actions {
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .action-card,
+  .service-card,
+  .article-card,
+  .panel-block,
+  .ticket-card,
+  .detail-main,
+  .detail-side,
+  .integration-panel,
+  .support-panel,
+  .announcement-card {
+    padding: 16px;
+  }
+
+  .action-card {
+    min-height: auto;
+  }
+
+  .action-card h2,
+  .panel-block h2,
+  .article-card h3,
+  .service-card h3 {
+    font-size: 17px;
+  }
+
+  .section-heading,
+  .panel-title,
+  .detail-header,
+  .page-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  .content-block {
+    margin: 18px 0;
+  }
+
+  .service-carousel {
+    gap: 12px;
+  }
+
+  .service-slide {
+    gap: 12px;
+  }
+
+  .service-card,
+  .service-slot-placeholder {
+    min-height: 226px;
+  }
+
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .carousel-dot.active {
+    width: 30px;
+  }
+
+  .side-panel {
+    gap: 12px;
+  }
+
+  .ticket-form {
+    padding: 16px;
+  }
+
   .span-2 {
     grid-column: auto;
   }
 
   .auth-context,
-  .request-summary {
-    align-items: flex-start;
+  .request-summary,
+  .selected-service-summary.selected,
+  .service-result,
+  .attachment-picker,
+  .form-actions,
+  .success-actions,
+  .footer {
+    align-items: stretch;
     flex-direction: column;
+  }
+
+  .auth-context,
+  .request-summary {
+    padding: 14px;
+  }
+
+  .service-finder {
+    padding: 12px;
+  }
+
+  .service-search-box {
+    min-height: 50px;
+  }
+
+  .service-search-box input::placeholder {
+    white-space: normal;
+  }
+
+  .service-result {
+    gap: 8px;
+  }
+
+  .service-result-meta {
+    justify-items: start;
+    min-width: 0;
+  }
+
+  .service-result-meta b,
+  .service-result-meta small,
+  .selected-service-tags b,
+  .badge {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .selected-service-tags {
+    justify-content: flex-start;
+  }
+
+  .attachment-picker .secondary-button,
+  .attachment-picker span {
+    width: 100%;
+  }
+
+  .attachment-list li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .attachment-list li > span {
+    width: 100%;
+  }
+
+  .attachment-list .compact-icon {
+    align-self: flex-end;
   }
 
   .phone-input-group {
     grid-template-columns: 1fr;
   }
 
-  .tile {
-    display: none;
+  .form-actions {
+    gap: 10px;
+    margin-top: 20px;
   }
 
-  .footer {
+  .form-actions .primary-button,
+  .form-actions .secondary-button,
+  .success-actions .primary-button,
+  .success-actions .secondary-button,
+  .filter-bar .primary-button,
+  .filter-bar .secondary-button,
+  .announcement-card .secondary-button {
+    width: 100%;
+  }
+
+  .flow-line {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-line svg {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .success-card {
+    margin: 28px auto;
+    padding: 26px 18px;
+  }
+
+  .ticket-number {
+    display: flex;
     flex-direction: column;
+    gap: 4px;
+    overflow-wrap: anywhere;
+  }
+
+  .filter-bar {
+    padding: 14px;
+  }
+
+  .ticket-card {
+    gap: 12px;
+  }
+
+  .ticket-card strong,
+  .info-grid dd,
+  .article-card p,
+  .service-card p,
+  .announcement-card p {
+    overflow-wrap: anywhere;
+  }
+
+  .detail-main,
+  .detail-side {
+    padding: 18px;
+  }
+
+  .knowledge-toolbar {
+    gap: 12px;
+  }
+
+  .category-pills {
+    flex-wrap: nowrap;
+    margin-inline: -12px;
+    padding-inline: 12px;
+    overflow-x: auto;
+    scroll-padding-inline: 12px;
+  }
+
+  .pill {
+    flex: 0 0 auto;
+  }
+
+  .announcement-card {
+    align-items: stretch;
+  }
+
+  .modal-backdrop {
+    align-items: end;
+    padding: 10px;
+  }
+
+  .profile-modal {
+    width: 100%;
+    max-height: min(92svh, 760px);
+    padding: 18px;
+    border-radius: 12px 12px 8px 8px;
+  }
+
+  .modal-header {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 430px) {
+  main,
+  .footer {
+    width: min(100% - 18px, 1180px);
+  }
+
+  .topbar-inner {
+    padding-inline: 9px;
+  }
+
+  .brand-logo {
+    width: 118px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero,
+  .ticket-form,
+  .action-card,
+  .service-card,
+  .article-card,
+  .panel-block,
+  .ticket-card,
+  .detail-main,
+  .detail-side,
+  .integration-panel,
+  .support-panel,
+  .announcement-card {
+    padding: 14px;
+  }
+
+  .hero h1,
+  .page-title h1,
+  .success-card h1,
+  .login-panel h1 {
+    font-size: 29px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .ghost-button,
+  .text-button,
+  .pill {
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .service-card-top {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .badge {
+    white-space: normal;
+  }
+
+  .profile-modal {
+    padding: 16px 14px;
   }
 }
